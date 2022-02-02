@@ -8,7 +8,7 @@
 class InterfaceEffectTremolo : public AudioStream
 {
 public:
-	InterfaceEffectTremolo() : AudioStream(1, inputQueueArray) {
+	InterfaceEffectTremolo() : AudioStream(numChannels, inputQueueArray) {
         for(int i = 0; i < AUDIO_SAMPLE_RATE; i++) {
             wavetable[i] = sin(2 * M_PI * i / AUDIO_SAMPLE_RATE);
         }
@@ -27,8 +27,8 @@ private:
 	int count = 0;
 	bool on = true;
 	
-	
-	audio_block_t *inputQueueArray[1];
+	const static int numChannels = 1;
+	audio_block_t *inputQueueArray[numChannels];
 };
 
 #endif

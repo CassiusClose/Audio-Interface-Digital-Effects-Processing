@@ -10,7 +10,7 @@
 class InterfaceEffectDelay : public AudioStream
 {
 public:
-	InterfaceEffectDelay() : AudioStream(1, inputQueueArray) {
+	InterfaceEffectDelay() : AudioStream(numChannels, inputQueueArray) {
         memset(delayLine, 0, sizeof(delayLine));
 		delayLineIndex = 0;
     }
@@ -25,7 +25,8 @@ private:
 	
 	float dryWetMix = 0.5;
 	
-	audio_block_t *inputQueueArray[1];
+	const static int numChannels = 1;
+	audio_block_t *inputQueueArray[numChannels];
 };
 
 #endif
