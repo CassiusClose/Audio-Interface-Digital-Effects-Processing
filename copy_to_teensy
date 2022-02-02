@@ -1,4 +1,3 @@
-loc="/opt/arduino-1.8.16/arduino-1.8.16/hardware/teensy/avr/libraries/Audio/"
+loc="/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/libraries/Audio"
 cp *.cpp $loc
-cp *.c $loc
 cp *.h $loc
