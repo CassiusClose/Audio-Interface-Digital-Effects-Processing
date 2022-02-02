@@ -58,6 +58,10 @@
 // include all the library headers, so a sketch can use a single
 // #include <Audio.h> to get the whole library
 //
+
+#include "interface_effect_tremolo.h"
+#include "interface_effect_delay.h"
+
 #include "analyze_fft256.h"
 #include "analyze_fft1024.h"
 #include "analyze_print.h"
@@ -78,7 +82,6 @@
 #include "effect_flange.h"
 #include "effect_envelope.h"
 #include "effect_multiply.h"
-#include "effect_delay.h"
 #include "effect_delay_ext.h"
 #include "effect_midside.h"
 #include "effect_reverb.h"
