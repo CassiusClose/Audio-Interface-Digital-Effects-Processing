@@ -3,10 +3,20 @@
 
 void InterfaceEffectDelay::update(void)
 {
-	audio_block_t *block = receiveWritable(0);
+	audio_block_t *blockL = receiveWritable(0);
 
-    if(!block)
+    if(!blockL)
         return;
+
+
+
+	audio_block_t *blockR = receiveWritable(0);
+
+    if(!blockR) {
+        release(blockL);
+        return;
+    }
+
 
 
     for(int i = 0; i < AUDIO_BLOCK_SAMPLES; i++) {
@@ -14,8 +24,10 @@ void InterfaceEffectDelay::update(void)
     }
 
 
-    transmit(block, 0);
-    release(block);
+    transmit(blockL, 0);
+    transmit(blockR, 1);
+    release(blockL);
+    release(blockR);
 }
 
 
