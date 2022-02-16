@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include "interface_effect_delay.h"
+#include "interface_effect_template.h"
 
-void InterfaceEffectDelay::update(void)
+void InterfaceEffectTemplate::update(void)
 {
 	audio_block_t *blockL = receiveWritable(0);
 

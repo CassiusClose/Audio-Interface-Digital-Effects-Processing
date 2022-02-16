@@ -13,7 +13,7 @@ public:
 	virtual void update(void);
 
 private:
-    const int numChannels = 2;
+    const static int numChannels = 2;
 	audio_block_t *inputQueueArray[numChannels];
 };
 

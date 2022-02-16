@@ -1,3 +1,4 @@
-loc="/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/libraries/Audio"
+loc="/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/libraries/AudioInterface"
+
 cp *.cpp $loc
 cp *.h $loc
