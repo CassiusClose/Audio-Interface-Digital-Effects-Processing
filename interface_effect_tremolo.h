@@ -27,7 +27,7 @@ private:
 	int count = 0;
 	bool on = true;
 	
-	const static int numChannels = 1;
+	const static int numChannels = 2;
 	audio_block_t *inputQueueArray[numChannels];
 };
 
