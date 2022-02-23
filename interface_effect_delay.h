@@ -11,17 +11,17 @@ class InterfaceEffectDelay : public AudioStream
 {
 public:
 	InterfaceEffectDelay() : AudioStream(numChannels, inputQueueArray) {
-        memset(delayLine, 0, sizeof(delayLine));
+        memset(delayLineL, 0, sizeof(delayLineL));
 		delayLineIndex = 0;
     }
 
 	virtual void update(void);
 
 private:
-	float delayLine[(int) (AUDIO_SAMPLE_RATE * DELAY_LINE_LEN)];
+	float delayLineL[(int) (AUDIO_SAMPLE_RATE * DELAY_LINE_LEN)];
 	int delayLineIndex;	
 	
-	float input;
+	float inputL;
 	
 	float dryWetMix = 0.5;
 	
