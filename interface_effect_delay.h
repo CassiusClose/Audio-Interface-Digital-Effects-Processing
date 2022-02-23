@@ -4,18 +4,19 @@
 #include <math.h>
 #include "Arduino.h"
 #include "AudioStream.h"
+#include "InterfaceEffect.h"
 
 #define DELAY_LINE_LEN 1
 
-class InterfaceEffectDelay : public AudioStream
+class InterfaceEffectDelay : public InterfaceEffect
 {
 public:
-	InterfaceEffectDelay() : AudioStream(numChannels, inputQueueArray) {
+	InterfaceEffectDelay() : InterfaceEffect(false, false) {
         memset(delayLineL, 0, sizeof(delayLineL));
 		delayLineIndex = 0;
     }
 
-	virtual void update(void);
+	virtual void update(audio_block_t* blockL, audio_block_t* blockR);
 
 private:
 	float delayLineL[(int) (AUDIO_SAMPLE_RATE * DELAY_LINE_LEN)];
@@ -24,9 +25,6 @@ private:
 	float inputL;
 	
 	float dryWetMix = 0.5;
-	
-	const static int numChannels = 1;
-	audio_block_t *inputQueueArray[numChannels];
 };
 
 #endif

@@ -31,6 +31,9 @@ void InterfaceToolMonitor::update(void)
 		if(abs > maxLevelR)
 			maxLevelR = abs;
     }
+	
+	transmit(blockL, 0);
+	transmit(blockR, 1);
     release(blockL);
 	release(blockR);
 }
