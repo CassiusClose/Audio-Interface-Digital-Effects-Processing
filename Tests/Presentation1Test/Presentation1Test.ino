@@ -14,20 +14,20 @@ Encoder enc(28, 29);
 long oldEncVal = -999;
 
 
-// GUItool: begin automatically generated code
-AudioInputUSB             usbIn;           //xy=330,276
+AudioInputUSB             usbIn;
 
 InterfaceToolMonitor      monitoring;
 InterfaceToolSelector     effectSelector;
 
-AudioOutputUSB            usbOut;           //xy=498,264
-AudioOutputI2S            i2sOut;           //xy=538,332
+AudioOutputUSB            usbOut;
+AudioOutputI2S            i2sOut;
 
 AudioConnection           p1(usbIn, 0, monitoring, 0);
 AudioConnection           p2(usbIn, 1, monitoring, 1);
 
 AudioConnection           p3(monitoring, 0, effectSelector, 0);
 AudioConnection           p4(monitoring, 1, effectSelector, 1);
+
 AudioConnection           p5(effectSelector, 0, usbOut, 0);
 AudioConnection           p6(effectSelector, 1, usbOut, 1);
 AudioConnection           p7(effectSelector, 0, i2sOut, 0);

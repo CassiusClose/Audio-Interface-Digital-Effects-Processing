@@ -3,18 +3,16 @@
 
 #include "Arduino.h"
 #include "AudioStream.h"
+#include "InterfaceEffect.h"
 
-class InterfaceEffectTemplate : public AudioStream
+class InterfaceEffectTemplate : public InterfaceEffect
 {
 public:
-	InterfaceEffectTemplate() : AudioStream(numChannels, inputQueueArray) {
-    }
+	InterfaceEffectTemplate() : InterfaceEffect(true, false) {}
 
-	virtual void update(void);
+	virtual void update(audio_block_t* blockL, audio_block_t* blockR);
 
 private:
-    const static int numChannels = 2;
-	audio_block_t *inputQueueArray[numChannels];
 };
 
 #endif
