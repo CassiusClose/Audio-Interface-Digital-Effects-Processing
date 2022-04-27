@@ -1,0 +1,4 @@
+loc="/opt/arduino-1.8.16/arduino-1.8.16/hardware/teensy/avr/libraries/AudioInterface"
+
+cp *.cpp $loc
+cp *.h $loc

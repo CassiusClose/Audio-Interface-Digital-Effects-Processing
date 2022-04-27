@@ -14,7 +14,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   long encVal = enc.read();
   if(encVal != oldEncVal) {
-    Serial.println(encVal);
+    Serial.println(encVal); 
     oldEncVal = encVal;
   }
 }

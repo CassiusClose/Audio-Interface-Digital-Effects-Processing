@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include "interface_tool_selector.h"
-#include "AudioInterfaceEffects.h"
+#include "AudioInterface_Effects.h"
 
 void InterfaceToolSelector::update(void)
 {
@@ -15,7 +15,7 @@ void InterfaceToolSelector::update(void)
         return;
 	
 	
-	audio_block_t *blockR;
+	/*audio_block_t *blockR;
 
 	if(effect->isReadOnly())
 		blockR = receiveReadOnly(1);
@@ -25,20 +25,20 @@ void InterfaceToolSelector::update(void)
     if(!blockR) {
         release(blockL);
         return;
-    }
+    }*/
 
 	if(trem)
-		effect->update(blockL, blockR);
+		effect->update(blockL, NULL);
 
     transmit(blockL, 0);
-    transmit(blockR, 1);
+    //transmit(blockR, 1);
     release(blockL);
-    release(blockR);
+    //release(blockR);
 }
 
 void InterfaceToolSelector::switchEffect(void) {
 	if(trem) {
-		effect = &delayEffect;
+		//effect = &delayEffect;
 	}
 	else {
 		effect = &tremEffect;

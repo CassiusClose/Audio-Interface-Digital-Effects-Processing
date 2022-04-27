@@ -3,7 +3,7 @@
 
 #include "Arduino.h"
 #include "AudioStream.h"
-#include "AudioInterfaceEffects.h"
+#include "AudioInterface_Effects.h"
 
 class InterfaceToolSelector : public AudioStream
 {
@@ -17,15 +17,16 @@ public:
 	void switchEffect();
 
 private:
-    const static int numChannels = 2;
+    const static int numChannels = 1;
 	audio_block_t *inputQueueArray[numChannels];
 	
 	InterfaceEffectTremolo tremEffect;
-	InterfaceEffectDelay delayEffect;
+	//InterfaceEffectDelay delayEffect;
 	
 	InterfaceEffect* effect;
 	
 	bool trem = true;
+	bool doStuff;
 };
 
 #endif
