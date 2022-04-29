@@ -13,7 +13,10 @@ public:
 	}
 
 	virtual void update(void);
-	
+    virtual void updateCurrentEffectParam(float effectPercent){
+        effect->updateParam(effectPercent);
+    }
+    
 	void switchEffect();
 
 private:
@@ -23,6 +26,7 @@ private:
 	InterfaceEffectTremolo tremEffect;
 	//InterfaceEffectDelay delayEffect;
 	
+    // Pointer to current effect
 	InterfaceEffect* effect;
 	
 	bool trem = true;

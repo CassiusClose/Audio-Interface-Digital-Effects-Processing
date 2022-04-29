@@ -16,6 +16,10 @@ public:
 	virtual void update(audio_block_t *blockL, audio_block_t *blockR) {
 		
 	}
+    
+    virtual void updateParam(float effectAmount){
+        
+    }
 	
 	bool isStereo() { return stereo; }
 	bool isReadOnly() { return readOnly; }
