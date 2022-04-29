@@ -11,8 +11,6 @@
 #include <Encoder.h>
 #include "encoder_with_stored_values.h"
 
-Encoder enc(28, 29);
-
 long oldEncVal = -999;
 
 AudioInputI2S             i2sIn;
@@ -84,14 +82,14 @@ ILI9341_t3n tft = ILI9341_t3n(DISP_CS, DISP_DC, DISP_RST, DISP_MOSI, DISP_SCK, D
 
 #define CALLBACK_FUNCTION &InterfaceToolSelector::updateCurrentEffectParam
 
+// Encoder setup
+EncoderWithStoredValues C1B1(C1B1_ENCA,C1B1_ENCB,CALLBACK_FUNCTION);
+EncoderWithStoredValues C1B2(C1B2_ENCA,C1B2_ENCB,CALLBACK_FUNCTION);
+EncoderWithStoredValues C2B1(C2B1_ENCA,C2B1_ENCB,CALLBACK_FUNCTION);
+EncoderWithStoredValues C2B2(C2B2_ENCA,C2B2_ENCB,CALLBACK_FUNCTION);
 
-EncoderWithStoredValues C1B1(C1B1_ENCA,C1B1_ENCB,CALLBACK_FUNCTION)
-EncoderWithStoredValues C1B2(C1B2_ENCA,C1B2_ENCB,CALLBACK_FUNCTION)
-EncoderWithStoredValues C2B1(C2B1_ENCA,C2B1_ENCB,CALLBACK_FUNCTION)
-EncoderWithStoredValues C2B2(C2B2_ENCA,C2B2_ENCB,CALLBACK_FUNCTION)
-
-EncoderWithStoredValues FX1(FX1_ENCA,FX1_ENCB,CALLBACK_FUNCTION)
-EncoderWithStoredValues FX2(FX2_ENCA,FX2_ENCB,CALLBACK_FUNCTION)
+EncoderWithStoredValues FX1(FX1_ENCA,FX1_ENCB,CALLBACK_FUNCTION);
+EncoderWithStoredValues FX2(FX2_ENCA,FX2_ENCB,CALLBACK_FUNCTION);
 
 
 #define UI_MONITOR_WIDTH 16
@@ -156,7 +154,15 @@ void setup() {
 void loop() {
 
     //encodera.encoderValueUpdate;
+
+    // Encoder updates
+    C1B1.encoderValueUpdate;
+    C1B2.encoderValueUpdate;
+    C2B1.encoderValueUpdate;
+    C2B2.encoderValueUpdate;
     
+    FX1.encoderValueUpdate;
+    FX2.encoderValueUpdate;
   
   /*screenSwitchCount++;
   if(screenSwitchCount == 50) {

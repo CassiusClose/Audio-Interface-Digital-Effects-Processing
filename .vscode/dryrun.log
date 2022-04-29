@@ -1,0 +1,7 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/zackuchima/Desktop/Desktop/School/Spring 2022/AME 387/Audio-Interface-Effects'
+ 
+make: Leaving directory `/Users/zackuchima/Desktop/Desktop/School/Spring 2022/AME 387/Audio-Interface-Effects'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

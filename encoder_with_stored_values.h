@@ -5,6 +5,7 @@
 #include "Encoder.h"
 
 
+
 class EncoderWithStoredValues : public Encoder
 {
 public:
@@ -31,7 +32,7 @@ public:
         Serial.println(newValue/4.0);
         }
 
-      callback(newValue/4.0);
+      *(newValue/4.0);
         
       }
     }
